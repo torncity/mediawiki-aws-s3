@@ -306,7 +306,7 @@ class AmazonS3FileBackend extends FileBackendStore {
 		$ret = $this->runWithExceptionHandling( __FUNCTION__, function ()
 			use ( $params, $container, $bucket, $key, $contentType, $sha1Hash ) {
 			return $this->client->putObject( array_filter( [
-				'ACL' => $this->isSecure( $container ) ? 'private' : 'public-read',
+				//'ACL' => $this->isSecure( $container ) ? 'private' : 'public-read',
 				'Body' => $params['content'],
 				'Bucket' => $bucket,
 				'CacheControl' => $params['headers']['cache-control'],
